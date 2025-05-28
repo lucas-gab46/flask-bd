@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pagamento</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <linkS
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/static/css/styles.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <div id="qr-code">
+          <img src="{{ url_for('static', filename='img/confirmado.svg') }}" alt="cc" />
+        </div>
+
+        <aside>
+          <h1>Pedido Confirmado!</h1>
+          <p>
+            
+          </p>
+
+          <div id="purchase-value">
+            <img src="/static/img/tag.svg" alt="Ícone de tag" />
+            <span>Compra de R$ <strong id="amount">{{ payment.value }}</strong></span>
+          </div>
+        </aside>
+      </header>
+
+      <footer>
+        <div id="expiration-time">
+          <header>
+            <small>Obrigado Pela Compra!</small>
+            <div>
+              
+            </div>
+          </header>
+        </div>
+        <div id="order">
+          <small>O número do seu pedido é</small>
+          <div>
+            <img src="/static/img/basket.svg" alt="Ícone do pedido" />
+            <span>{{ payment.id }}</span>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
